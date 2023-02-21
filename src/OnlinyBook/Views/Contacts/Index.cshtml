@@ -1,0 +1,25 @@
+﻿@using OnlinyBook.Service.ViewModels.Contacts;
+@model ContactViewModel
+@{
+    ViewData["Title"] = "Обратная связь";
+}
+<div class="card w-250px h-300">
+    <div class="mt-5 mb-5 mx-5">
+        <h1>Обратная связь</h1>
+        
+        <form method="post" asp-controller="Contacts" asp-action="Check">
+                
+                <label asp-for="Email"></label>
+                <input asp-for="Email"/>
+                <span asp-validation-for="Email"></span>
+        
+                <label asp-for="Message"></label>
+                <input asp-for="Message"/>
+                <span asp-validation-for="Message"></span>
+        
+                <div>
+                    <button class="btn btn-success">Отправить</button>
+                </div>
+        </form>
+    </div>
+</div>

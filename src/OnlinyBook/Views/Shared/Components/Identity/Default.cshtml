@@ -1,0 +1,32 @@
+﻿@using OnlinyBook.Service.ViewModels.Accounts;
+@model AccountBaseViewModel
+
+
+<div class="dropdown show">
+    <img alt="Pic" src="~/@Model.ImagePath" width="70" height="60" class="btn btn-secondary dropdown-toggle border-0 bg-transparent" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
+
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <div class="menu-content d-flex align-items-center px-3">
+            <div class="d-flex flex-column">
+                <p>@Model.FirstName @Model.LastName</p>
+                <a href="/" class="fw-bold text-muted text-hover-primary fs-7">@Model.Email</a>
+            </div>
+        </div>
+        
+        <div class="dropdown-divider"></div>
+
+        <div class="separator my-2">
+            <a class="menu-item px-3" asp-controller="account" asp-action="upaccount">Личные данные</a>
+        </div>
+
+        <div class="separator my-21">
+            <a class="menu-item px-3" href="/">Настройки</a>
+        </div>
+
+        <div class="separator my-2">
+            <a class="menu-item px-3" asp-controller="account" asp-action="logout">Выход</a>
+        </div>
+
+        <div class="separator my-2"></div>
+    </div>
+</div>

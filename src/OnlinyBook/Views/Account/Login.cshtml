@@ -1,0 +1,23 @@
+﻿@using OnlinyBook.Service.Dtos.Accounts;
+@model AccountLoginDto
+@{
+	Layout = "_AccountLayout.cshtml";
+}
+
+<div class="login">
+	<h1>Вход в аккаунт</h1>
+	<form method="post" asp-controller="Account" asp-action="login">
+		<input type="email" asp-for=Email class="form-style" placeholder="Введите  электронную почту">
+		<i class="mt-3 input-icon fa fa-at"></i>
+		<span asp-validation-for="Email" class="text-danger"></span>
+
+		<input type="password" asp-for=Password class="form-style" placeholder="Введите пароль">
+		<i class="mt-3 input-icon fa fa-lock"></i>
+		<span asp-validation-for="Password" class="text-danger"></span>
+
+		<button type="submit" class="btn btn-primary btn-block btn-large">Вход</button>
+
+		<a asp-controller="account" asp-action="register" type="submit" class="btn btn-primary btn-block btn-large">Регистрация</a>
+	</form>
+</div>
+

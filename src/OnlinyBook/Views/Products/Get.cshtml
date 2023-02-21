@@ -1,0 +1,26 @@
+﻿@using OnlinyBook.Service.ViewModels.Products;
+@model ProductViewModel
+
+<div class="d-flex flex-row">
+    <div class="row-cols-2">
+        <img class="w-300px h-300px card-rounded" src="~/@Model.ImagePath" alt="@Model.Name" />
+    </div>
+    <div class="row-cols-2 mx-10 bg-white w-50 h-100">
+        <table class="table mb-3">
+            <thead>
+                <tr class="fw-bolder text-gray-700 fs-5 text-end">
+                    <td class="d-flex align-items-center pt-6">
+                        <i class="fa fa-genderless text-danger fs-2 me-2"></i>Цена :
+                    </td>
+                    <td class="pt-6 text-dark fw-boldest">
+                        @Model.Price
+                    </td>
+                </tr>
+                
+            </thead>
+        </table>
+        <div class="mb-4 me-4 ms-4 mt-4">
+            <a asp-controller="products" asp-action="down" asp-route-fileName="@Model.ProductsPath" class="btn btn-outline-success">Скачать</a>
+        </div>
+    </div>
+</div>

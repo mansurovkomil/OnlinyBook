@@ -1,0 +1,136 @@
+﻿@using OnlinyBook.Service.Common.Helpers;
+@using OnlinyBook.Service.Common.Unils;
+@using OnlinyBook.Service.ViewModels.Orders;
+@model PagedList<OrderBaseViewModel>
+
+@{
+    ViewData["Title"] = "Покупки";
+}
+
+<div>
+    @{
+        foreach (var product in Model)
+        {
+            <div class="card w-250px h-300">
+                <div class="mt-5 mb-5 mx-5">
+                    <div class="item">
+                        <div class="d-flex align-items-stretch">
+                            <div class="me-4">
+                                <img src="~/@product.ImagePath" alt="" width="150" height="200">
+                            </div>
+                            <span>@product.Description</span>
+                        </div>
+
+                        <div class="symbol symbol-50px me-5">
+                            <span class="fs-5" fw-bold text-gray-600>Название книги: @product.Name</span>
+                        </div>
+
+                        <div class="symbol symbol-50px me-5">
+                            <span>Цена: @product.Price сум</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        }
+
+        //<ul class="pagination">
+        //    @{
+        //        string pale = "<";
+        //        if (Model.MetaData.HasPrevious)
+        //        {
+        //            <li class="page-item previous m-1">
+        //                <a asp-controller="products" asp-action="Index" asp-route-page="@(Model.MetaData.CurrentPage-1)" class="page-link">
+        //                    <i class="previous">@pale</i>
+        //                </a>
+        //            </li>
+        //        }
+        //        else
+        //        {
+        //            <li class="page-item previous disabled m-1">
+        //                <a href="#" class="page-link">
+        //                    <i class="previous">@pale</i>
+        //                </a>
+        //            </li>
+        //        }
+
+
+        //        for (int _page = 1; _page <= Model.MetaData.TotalPages; _page++)
+        //        {
+        //            if (Model.MetaData.TotalPages >= 5)
+        //            {
+        //                if (Model.MetaData.CurrentPage - 1 == _page || Model.MetaData.CurrentPage == _page || Model.MetaData.CurrentPage + 1 == _page || _page == 1 || _page == Model.MetaData.TotalPages)
+        //                {
+        //                    if (_page == Model.MetaData.CurrentPage)
+        //                    {
+        //                        <li class="page-item active m-1">
+        //                            <a asp-controller="products" asp-action="Index" asp-route-page="@_page" class="page-link">@_page</a>
+        //                        </li>
+        //                    }
+        //                    else
+        //                    {
+        //                        <li class="page-item m-1">
+        //                            <a asp-controller="products" asp-action="Index" asp-route-page="@_page" class="page-link">@_page</a>
+        //                        </li>
+        //                    }
+        //                }
+        //                else if (Model.MetaData.CurrentPage + 2 == _page || Model.MetaData.CurrentPage - 2 == _page)
+        //                {
+        //                    if (Model.MetaData.TotalPages != Model.MetaData.CurrentPage + 2)
+        //                    {
+        //                        <li class="page-item m-1">
+        //                            <a class="page-link">...</a>
+        //                        </li>
+        //                    }
+        //                }
+
+        //            }
+        //            else
+        //            {
+        //                if (_page == Model.MetaData.CurrentPage)
+        //                {
+        //                    <li class="page-item active m-1">
+        //                        <a asp-controller="products" asp-action="Index" asp-route-page="@_page" class="page-link">@_page</a>
+        //                    </li>
+        //                }
+        //                else
+        //                {
+        //                    <li class="page-item m-1">
+        //                        <a asp-controller="products" asp-action="Index" asp-route-page="@_page" class="page-link">@_page</a>
+        //                    </li>
+        //                }
+        //            }
+
+        //        }
+
+        //        if (Model.MetaData.HasNext)
+        //        {
+        //            <li class="page-item next m-1">
+        //                <a asp-controller="products" asp-action="Index" asp-route-page="@(Model.MetaData.CurrentPage+1)" class="page-link">
+        //                    <i class="next">></i>
+        //                </a>
+        //            </li>
+        //        }
+        //        else
+        //        {
+        //            <li class="page-item disabled next m-1">
+        //                <a href="#" class="page-link">
+        //                    <i class="next">></i>
+        //                </a>
+        //            </li>
+        //        }
+        //    }
+        //</ul>
+
+    }
+
+</div>
+
+
+
+
+
+
+
+
+
