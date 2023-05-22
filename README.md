@@ -1,2 +1,2 @@
 # Netdev
-This project for learning C# 
+This project for learning C#/.NET
